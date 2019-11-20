@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Axanxiety</string>
+    <string name="wood_block_btn">Wood Block</string>
+    <string name="beep_btn">Beep</string>
+</resources>
