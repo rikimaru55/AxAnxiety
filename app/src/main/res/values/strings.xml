@@ -1,5 +1,12 @@
 <resources>
-    <string name="app_name">Axanxiety</string>
+    <string name="app_name">AxAnxiety</string>
     <string name="wood_block_btn">Wood Block</string>
     <string name="beep_btn">Beep</string>
+    <string name="about_btn">About</string>
+    <string name="credits">Made with &lt;3 and sorcerous powers in Vancouver</string>
+    <string name="web_version">https://axanxiety.mobi</string>
+    <string name="attributes">Sounds from freesound:\n
+&quot;tone beep lower slower&quot; by pan14 \n\t (https://freesound.org/people/pan14/)\n
+&quot;Woodblock&quot; by kwahmah_02 \n\t (https://freesound.org/people/kwahmah_02/)</string>
+    <string name="title_activity_about">About</string>
 </resources>

@@ -1,15 +1,13 @@
 package com.axanxiety.app
 
+import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 
 class MainActivity : AppCompatActivity() {
-
-    enum class Sounds {
-        WoodBlock,
-        Beep
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,17 +15,29 @@ class MainActivity : AppCompatActivity() {
 
         val woodBlockBtn = findViewById<Button>(R.id.woodBlockBtn)
         val beepBtn = findViewById<Button>(R.id.beepBtn)
+        val settingsBtn = findViewById<ImageButton>(R.id.settingsBtn);
+
+        val woodBlockSound : MediaPlayer = MediaPlayer.create(this@MainActivity, R.raw.woodblock)
+        val beepSound : MediaPlayer = MediaPlayer.create(this@MainActivity, R.raw.beep)
 
         woodBlockBtn.setOnClickListener {
-            playSound(Sounds.WoodBlock)
+           playSound(woodBlockSound)
         }
 
         beepBtn.setOnClickListener {
-            playSound(Sounds.Beep)
+            playSound(beepSound)
+        }
+
+        settingsBtn.setOnClickListener {
+            val intent = Intent(this, About::class.java)
+            startActivity(intent)
         }
     }
 
-    private fun playSound(sound:Sounds) {
-
+    private fun playSound(player:MediaPlayer) {
+        if(player.isPlaying){
+            player.stop()
+        }
+        player.start()
     }
 }
